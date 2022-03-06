@@ -1,0 +1,17 @@
+.form-group {
+	width:50%;
+	float:left;
+	padding:0 15px;
+}
+.form-group input {
+	float:left;
+}
+.form-group label {
+	float:right;
+}
+
+.active
+{
+    color: white;
+    background-color: #4caf50;
+}

@@ -1,7 +1,57 @@
-
-    <label for="pname">Playing Card Name:</label>
-    <input type="text" id="fname" name="fname" #inputdata (keyup) = "getValue(inputdata.value)"><br><br>
-    <h1>{{inputCardData}}</h1>
-    <button (click) ="getSortedData()">GetSortedData</button><br><br>
-    <label for="sortorder">Sort Order:</label>
-    <p>{{outputData}}</p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div ng-controller="headerCtrl">
+  <div class="container" style="background-color:white">
+    <h2 style="color:black; text-align:center" ><b>FULL STACK PROGRAM TEST</b></h2>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">       
+        <div class="panel-body">
+          <section>
+            <div class="row">
+              <div class="col-xs-12">
+                <form class="form-inline">
+                  <div class="form-group" >
+                    <label for="decknames">Enter Deck Card Names:</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="decknames" placeholder="Enter the comma(,) seperated Deck Card Details" #inputdata (keyup) = "getValue(inputdata.value)" [value]="inputCardData" required>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <br/> 
+            <div class="row">
+              <div class="col-xs-12">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label >Entered CardDeck Names:</label>
+                  </div>
+                  <div >
+                    <label >{{inputCardData}}</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <br/> 
+            <div class="row">
+              <div class="col-xs-12">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label >Sorted Deck Card Names:</label>
+                  </div>
+                  <div>
+                    <label [ngClass]="activelable ? 'active' : ''">{{outputData}}</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+          <div class="pull-right">
+            <button type="submit" class="btn btn-primary" (click)="getSortedData()">Sort Deck Cards</button>
+            <button type="clear" class="btn btn-secondary" (click)="clearData()">Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div> </div>
+  </div>
+</div>

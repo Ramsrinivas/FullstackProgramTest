@@ -8,12 +8,12 @@ import { CardService } from 'src/app/services/card.service';
 export class CarddeckComponent implements OnInit {
   buttontext: string = "GetSortedData";
   inputCardData: string = "";
-  outputData: string = "TestOutPutData";
-
+  outputData: string = "";
+  activelable: boolean = false;
   constructor(private cardService: CardService){ }
 
   ngOnInit(): void {
-    //this.outputData = this.cardService.getSortedData("").subscribe((outputdata) => this.outputData = outputdata);
+
   }
 
   getValue(val: string){
@@ -25,7 +25,12 @@ export class CarddeckComponent implements OnInit {
       {
         this.outputData = result;
       });
-      this.outputData =  this.inputCardData;
-      this.inputCardData = this.inputCardData;
+      this.activelable = true;
+  }
+
+  clearData()
+  {
+    this.inputCardData = "";
+    this.outputData = "";
   }
 }
