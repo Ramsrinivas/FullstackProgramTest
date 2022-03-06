@@ -1,2 +1,4 @@
 {
+    "appService.defaultWebAppToDeploy": "/subscriptions/275106d3-90e4-4299-99b7-114d9c67317f/resourceGroups/Fullstackprog/providers/Microsoft.Web/sites/fullstackapplicationtest",
+    "appService.deploySubpath": "dist\\fullstackprogramtest"
 }
